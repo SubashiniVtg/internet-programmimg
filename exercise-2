@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PatientDashboard</title>
+    <link rel="icon" href="/media/favicon.icon">
+    <link rel="stylesheet" href="patient.css">
+</head>
+<body>
+    <h1>hii</h1>
+<nav>
+    <header class="logo">
+        <i class="fa-solid fa-heart">    WealthCare</i>
+    </header>
+    <br>
+    <br>
+    <ul >
+       
+            <li><a href="#" ><i class="fa-solid fa-chart-line"><span class="nav-item" >   Dashboard</span></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-calendar-check"><span class="nav-item">   Appointment</span></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-chart-simple"><span class="nav-item">  Analysis </span></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-pills"><span class="nav-item">  Medicines</span></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-stethoscope"><span class="nav-item">  Doctors</span></i></a></li>
+           <li><a href="#"><i class="fa-solid fa-hospital-user"><span class="nav-item"> Health Diary</span></i></a></li>
+            <li><a href="#"class="logout"><i class="fa-solid fa-right-from-bracket"><span class="nav-item">Log Out</span></i></a></li>
+        </ul>
+</nav>
+<div class="main-content">
+        <h1> Dash Board </h1></div>
+        <div class="container">
+            <div class="box">
+      <i class="fa-solid fa-droplet"><h5>Blood Pressure</h5> </i><br>
+       
+    </div>
+     <div class="box">
+        <i class="fa-solid fa-temperature-full"><h5>Fever</h5></i>
+        </div>
+        <div class="appointment">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="3">Upcoming Appointment</th>
+                    </tr>
+                </thead>
+                <tbody style="display:block">
+                    <tr>
+                        <td ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjZYPhSPHI-UmKwzuQ--DIhEOfWEnsHDAMFg&usqp=CAU" alt="" width="50px"></td>
+                        <td> DR.Rahul</td>
+                        <br>
+                        <td>Physical Therapy</td>
+                    </tr>
+                    <tr>
+                        <td ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9L-joX_ebgMc293oCvudi4DWZ-T_Jhbn0Vg&usqp=CAU" alt="" width="50px"></td>
+                        <td> DR.Karthika</td><br>
+                        <td>cadiologist</td>
+                    </tr>
+</tbody>
+                 </table>
+        </div>
+        <div class="box1">
+        <i class="fa-brands fa-stack-overflow"><h5>Sugar Rate</h5></i>
+    </div> <div class="box1">
+        <i class="fa-solid fa-heart-pulse"><h5>Heart Beat</h5></i>
+     </div>
+    </div>
+  <br> <br>
+  <div class="description">
+    <h3>Medicine description</h3>
+ 
+     <textarea name="description" id="" cols="100" rows="13" width="auto">
+        
+     </textarea>
+  </div>
+</body>
+</html>
