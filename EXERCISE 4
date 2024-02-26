@@ -1,0 +1,136 @@
+// program 1
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Objects Display</title>
+</head>
+<body>
+<div id="carList"></div>
+<script>
+const cars = [
+    { name: 'Toyota', price: 25000 },
+    { name: 'Honda', price: 22000 },
+    { name: 'Ford', price: 28000 },
+    { name: 'Chevrolet', price: 30000 },
+    { name: 'Nissan', price: 23000 }
+];
+cars.sort((a, b) => a.price - b.price);
+const carListElement = document.getElementById('carList');
+carListElement.innerHTML = '<h2>Car List - Ordered by Price</h2>';
+carListElement.innerHTML += '<ul>';
+for (const car of cars) {
+    carListElement.innerHTML += `<li>${car.name} - $${car.price.toFixed(2)}</li>`;
+}
+carListElement.innerHTML += '</ul>';
+</script>
+</body>
+</html>
+//program 2
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Sum and Product</title>
+</head>
+<body>
+<script>
+function calculateSum(array) {
+    return array.reduce((sum, num) => sum + num, 0);
+}
+
+// Function to compute the product of an array of integers
+function calculateProduct(array) {
+    return array.reduce((product, num) => product * num, 1);
+}
+const numbers = [1, 2, 3, 4, 5];
+const sum = calculateSum(numbers);
+console.log(`Sum: ${sum}`);
+const product = calculateProduct(numbers);
+console.log(`Product: ${product}`);
+</script>
+</body>
+</html>
+//program-3
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitalize First Letter</title>
+</head>
+<body>
+<script>
+function capitalizeFirstLetter(str) {
+    if (str.length === 0) {
+        return str;
+    }
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+const inputString = "hello world";
+const capitalizedString = capitalizeFirstLetter(inputString);
+console.log(capitalizedString); // Output: "Hello world"
+</script>
+</body>
+</html>
+// program 4
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anagram Checker</title>
+</head>
+<body>
+<script>
+function areAnagrams(str1, str2) {
+    const cleanStr1 = str1.replace(/\s/g, '').toLowerCase();
+    const cleanStr2 = str2.replace(/\s/g, '').toLowerCase();
+    const sortedStr1 = cleanStr1.split('').sort().join('');
+    const sortedStr2 = cleanStr2.split('').sort().join('');
+return sortedStr1 === sortedStr2;
+}
+const string1 = "listen";
+const string2 = "silent";
+
+if (areAnagrams(string1, string2)) {
+    console.log(`${string1} and ${string2} are anagrams.`);
+} else {
+    console.log(`${string1} and ${string2} are not anagrams.`);
+}
+</script>
+</body>
+</html>
+//program-5
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Amount to Coins</title>
+</head>
+<body>
+<script>
+function convertToCoins(amount, coinDenominations) {
+    coinDenominations.sort((a, b) => b - a);
+    const result = [];
+    for (const coin of coinDenominations) {
+        const numCoins = Math.floor(amount / coin);
+        for (let i = 0; i < numCoins; i++) {
+            result.push(coin);
+        }
+        amount %= coin;
+    }
+
+    return result;
+}
+const amount = 46;
+const coinDenominations = [25, 10, 5, 2, 1];
+const result = convertToCoins(amount, coinDenominations);
+console.log(result); // Output: [25, 10, 10, 1]
+</script>
+</body>
+</html>
+
