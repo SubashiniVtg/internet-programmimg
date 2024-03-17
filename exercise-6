@@ -1,0 +1,96 @@
+//code 2
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Word Occurrence Counter</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+    body{
+        background-color: burlywood;
+    }
+    center{
+ margin-top:20%
+    }
+</style>
+
+</head>
+<body>
+<center><p>Sentence: <span id="sentence">The quick brown fox jumps over the lazy dog.</span></p>
+<p>Enter word to find occurrence: <input type="text" id="word"></p>
+<button id="countButton">Count Occurrence</button>
+<p id="result"></p></center>
+<script>
+$(document).ready(function() {
+  $('#countButton').click(function() {
+    const sentence = $('#sentence').text();
+    const word = $('#word').val();
+    const regex = new RegExp('\\b' + word + '\\b', 'gi');
+    const count = (sentence.match(regex) || []).length;
+    $('#result').text(`The word "${word}" occurs ${count} times in the sentence.`);
+  });
+});
+</script>
+</body>
+</html>
+//code 1
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic List Item</title>
+<style>
+body {
+    background-color: aquamarine;
+  font-family: Arial, sans-serif;
+}
+
+button {
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+</style>
+</head>
+<body>
+
+<div>
+  <button id="addToList">Add List Item</button>
+  <ul id="list"></ul>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getRandomColor() {
+  return `rgb(${getRandomNumber(0, 255)}, ${getRandomNumber(0, 255)}, ${getRandomNumber(0, 255)})`;
+}
+
+$(document).ready(function() {
+  $('#addToList').click(function() {
+    const randomNumber = getRandomNumber(1, 10);
+    const randomColor = getRandomColor();
+    const listItem = $('<li>').text(randomNumber).css('background-color', randomColor);
+    $('#list').append(listItem);
+  });
+});
+
+</script>
+</body>
+</html>
