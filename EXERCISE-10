@@ -1,4 +1,4 @@
-//contact.php
+     //contact.php
 <?php
 $nameerr = "";
 $name=" ";
@@ -39,13 +39,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     MESSAGE:<input type="text" name="t3" required><br>
     <input type="submit" name="submit">
 </form> 
-
 <style>
     .error {
         color:red;
     }
 </style>
-//db.php
+      //db.php
 <?php
 $host='localhost';
 $username='root';
