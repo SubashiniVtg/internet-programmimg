@@ -1,0 +1,77 @@
+//contact.php
+<?php
+$nameerr = "";
+$name=" ";
+$email=" ";
+$emailerr = "";
+
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+    if(empty($_POST["t1"])) {
+        $nameerr = "Enter your name";
+    } else {
+        $name = $_POST["t1"];
+        $namepattern = "/^[a-zA-Z]*$/";
+        if(!preg_match($namepattern, $name)) {
+            $nameerr = "Enter alphabets only";
+        }
+    }
+
+    if(empty($_POST["t2"])) {
+        $emailerr = "Enter your email";
+    } else {
+        $email = $_POST["t2"];
+        $emailpattern = "/^\S+@\S+\.\S+$/";
+        if(!preg_match($emailpattern, $email)) {
+            $emailerr = "Enter email format";
+        }
+    }
+}
+?>
+<form action="db.php" method="GET"> 
+    NAME:<input type="text" name="t1">
+    <span class="error">
+        <?php echo $nameerr;?>
+    </span><br>
+    EMAIL:<input type="email" name="t2">
+    <span class="error">
+        <?php echo $emailerr;?>
+    </span><br>
+    MESSAGE:<input type="text" name="t3" required><br>
+    <input type="submit" name="submit">
+</form> 
+<style>
+    .error {
+        color:red;
+    }
+</style>
+      //db.php
+<?php
+$host='localhost';
+$username='root';
+$password='';
+// $conn=new mysqli($host,$username,$password);
+// $sql="create database test2";
+ $db="test2";
+$conn=new mysqli($host,$username,$password,$db);
+// $sql="create table contacts(name varchar(10), email varchar(20), message varchar(25))";
+// $sql="insert into contacts values('suba','subashini26@gmail.com','welcome to login page')";
+$name=$_GET['t1'];
+$email=$_GET['t2'];
+$message=$_GET['t3'];
+$sql="insert into contacts values('$name','$email','$message')";
+if($conn->connect_error)
+{
+    echo 'cant connect db';
+}
+else{
+    echo 'connect successfully'.'<br>';
+}
+if($conn->query($sql))
+{
+ echo 'value inserted';
+}
+else
+{
+    echo 'value not inserted';
+}
+?>
